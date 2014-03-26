@@ -628,8 +628,7 @@
 
 # A list of enabled extensions with a special entry all which
 # indicates every extension is enabled (list value)
-#api_extensions=all
-
+api_extensions="security-group, ext-gw-mode, binding, quotas, agent, dhcp_agent_scheduler, provider,router, external-net, allowed-address-pairs"
 
 [service_available]
 
@@ -677,7 +676,7 @@
 #
 
 # If false, skip all nova v3 tests. (boolean value)
-#api_v3=true
+api_v3=false
 
 # If false, skip disk config tests (boolean value)
 #disk_config=true
