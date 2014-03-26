@@ -64,9 +64,10 @@ class ServerRescueV3TestJSON(base.BaseV3ComputeTest):
 
     @classmethod
     def tearDownClass(cls):
-        client = cls.volumes_client
-        client.delete_volume(str(cls.volume_to_attach['id']).strip())
-        client.delete_volume(str(cls.volume_to_detach['id']).strip())
+        if getattr(cls, 'volumes_client'):
+            client = cls.volumes_client
+            client.delete_volume(str(cls.volume_to_attach['id']).strip())
+            client.delete_volume(str(cls.volume_to_detach['id']).strip())
         super(ServerRescueV3TestJSON, cls).tearDownClass()
 
     def tearDown(self):
